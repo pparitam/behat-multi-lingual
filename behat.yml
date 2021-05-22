@@ -1,0 +1,144 @@
+default:
+  suites:
+    default:
+#      paths:
+#        - %paths.base%/features
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - emuse\BehatHTMLFormatter\Context\ScreenshotContext:
+              screenshotDir: build/html/behat/assets/screenshots
+  formatters:
+    pretty: true
+    html:
+      output_path: %paths.base%/build/html/behat
+  extensions:
+    Drupal\MinkExtension:
+      goutte: ~
+      browser_name: 'chrome'
+      javascript_session: selenium2
+      files_path: %paths.base%/features/media
+      selenium2:
+        wd_host: http://127.0.0.1:4444/wd/hub
+        capabilities: { "version": "*", 'chrome': { 'switches': ['--start-maximized','--start-fullscreen'] } }
+      base_url: http://localhost:8888
+    Bex\Behat\ScreenshotExtension:
+      screenshot_taking_mode: failed_steps
+      image_drivers:
+        local:
+          screenshot_directory: "%paths.base%/reports/screenshots"
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig,Behat2
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      drush:
+        alias: 'local'
+      drupal:
+        drupal_root: '/Applications/MAMP/htdocs/'
+      region_map:
+        preheader: ".region-pre-header"
+        header: ".region-header"
+        Layout-header: ".layout-header"
+        highlighted: ".region-highlighted"
+        footer: ".region-footer"
+        content_bottom: ".region-content-bottom"
+        bottom: ".region-bottom"
+        tabs: ".layout-tabs"
+        region_tab: ".region-tabs"
+        revisions: ".node-revision-table"
+        operations: ".views-field views-field-operations"
+        right: '.layout-region layout-region-node-secondary'
+        main: ".region-content"
+        page-title: ".block-page-title-block"
+        promoted: ".view-promoted-items--double"
+        content: ".layout-content"
+        summary: ".summary"
+        Ingredients: ".block-field-blocknoderecipefield-ingredients"
+      selectors:
+        message_selector: '.messages'
+        error_message_selector: '.messages--error'
+        success_message_selector: '.messages--status'
+        warning_message_selector: '.messages--warning'
+
+
+default:
+  suites:
+    default:
+#      paths:
+#        - %paths.base%/features
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - emuse\BehatHTMLFormatter\Context\ScreenshotContext:
+              screenshotDir: build/html/behat/assets/screenshots
+  formatters:
+    pretty: true
+    html:
+      output_path: %paths.base%/build/html/behat
+  extensions:
+    Drupal\MinkExtension:
+      goutte: ~
+      browser_name: 'chrome'
+      javascript_session: selenium2
+      files_path: %paths.base%/features/media
+      selenium2:
+        wd_host: http://127.0.0.1:4444/wd/hub
+        capabilities: { "version": "*", 'chrome': { 'switches': ['--start-maximized','--start-fullscreen'] } }
+      base_url: http://localhost:8888
+    Bex\Behat\ScreenshotExtension:
+      screenshot_taking_mode: failed_steps
+      image_drivers:
+        local:
+          screenshot_directory: "%paths.base%/reports/screenshots"
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig,Behat2
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      drush:
+        alias: 'local'
+      drupal:
+        drupal_root: '/Applications/MAMP/htdocs/'
+      region_map:
+        preheader: ".region-pre-header"
+        header: ".region-header"
+        Layout-header: ".layout-header"
+        highlighted: ".region-highlighted"
+        footer: ".region-footer"
+        content_bottom: ".region-content-bottom"
+        bottom: ".region-bottom"
+        tabs: ".layout-tabs"
+        region_tab: ".region-tabs"
+        revisions: ".node-revision-table"
+        operations: ".views-field views-field-operations"
+        right: '.layout-region layout-region-node-secondary'
+        main: ".region-content"
+        page-title: ".block-page-title-block"
+        promoted: ".view-promoted-items--double"
+        content: ".layout-content"
+        summary: ".summary"
+        Ingredients: ".block-field-blocknoderecipefield-ingredients"
+      selectors:
+        message_selector: '.messages'
+        error_message_selector: '.messages--error'
+        success_message_selector: '.messages--status'
+        warning_message_selector: '.messages--warning'
+
+
