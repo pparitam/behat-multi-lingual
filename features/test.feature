@@ -19,3 +19,4 @@ Feature: Contact form validation in english
       """
     And I press the "Send message" button
     Then I validate the validation message
+    Then I should see element "required"

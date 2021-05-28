@@ -431,6 +431,27 @@ JS;
   }
 
 
+  /**
+   * @AfterStep
+
+  public function takeScreenshotAfterFailedStep(AfterStepScope $scope) {
+    if ($scope->getTestResult()->getResultCode() == 99) {
+      $this->takeScreenshot();
+    }
+  }
+
+  /**
+   * Store a screenshot.
+
+  private function takeScreenshot() {
+    $screenshot = $this->getSession()->getDriver()->getScreenshot();
+    $path = '/var/www/projectname/' . date('d-m-y') . '-' . uniqid() . '.png';
+
+    file_put_contents($path, $screenshot);
+    print 'Screenshot at: ' . $path;
+  }
+
+   */
 
 
 

@@ -331,7 +331,7 @@
         <div class="feature">
             <h2>
                 <span id="feat1" class="keyword"> Feature: </span>
-                <span class="title">Search Validation</span>
+                <span class="title">Contact form positive and negative scenarios</span>
             </h2>
             <p></p>
             <ul class="tags">
@@ -347,7 +347,7 @@
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario Outline: </span>
-                    <span class="title">Validate success message</span>
+                    <span class="title">Validate success message for successful submission of the form.</span>
                 </h3>
                 <ol>
                     <li class="passed">
@@ -406,12 +406,13 @@
                             <span class="path">Drupal\DrupalExtension\Context\MinkContext::pressButton()</span>
                         </div>
                     </li>
-                    <li class="passed">
+                    <li class="failed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">I should see &quot;Your message has been sent.&quot; </span>
                             <span class="path">Drupal\DrupalExtension\Context\MinkContext::assertPageContainsText()</span>
                         </div>
+                        <pre class="backtrace">The text "Your message has been sent." was not found anywhere in the text of the current page.</pre>
                     </li>
                     <li class="passed">
                         <div class="step">
@@ -487,7 +488,7 @@
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario Outline: </span>
-                    <span class="title">Validate Blank and Space value in field</span>
+                    <span class="title">Validate there should not be any success message when form filled with Blank and Space value.</span>
                 </h3>
                 <ol>
                     <li class="passed">
@@ -624,10 +625,11 @@
                     <li>@en</li>
                     <li>@smoke</li>
                     <li>@sanity</li>
+                    <li>@pystring</li>
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
-                    <span class="title">Verify contact form is submitted successfully for English</span>
+                    <span class="title">Verify contact form is submitted successfully when "Message" field value is filled with pyString</span>
                 </h3>
                 <ol>
                     <li class="passed">
@@ -717,7 +719,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
-                    <span class="title">Verify contact form is submitted successfully for English</span>
+                    <span class="title">Verify contact form is submitted successfully when "Message" field value is filled with pyString</span>
                 </h3>
                 <ol>
                     <li class="passed">
@@ -804,7 +806,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
-                    <span class="title">Verify contact form is submitted successfully for Spanish with long message</span>
+                    <span class="title">Verify contact form is submitted successfully in spansish when "Message" field value is filled with pyString</span>
                 </h3>
                 <ol>
                     <li class="passed">
@@ -891,7 +893,7 @@ como Aldus PageMaker, que incluye versiones de Lorem Ipsum.</pre>
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
-                    <span class="title">Verify contact form is showing 5 times submission error message</span>
+                    <span class="title">Verify contact form is showing 5 times submission error message, when form is filled more than 5 times in an hour</span>
                 </h3>
                 <ol>
                     <li class="passed">
@@ -963,16 +965,19 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                             <span class="path">Drupal\DrupalExtension\Context\MinkContext::pressButton()</span>
                         </div>
                     </li>
-                    <li class="passed">
+                    <li class="failed">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">I should see &quot;You cannot send more than 5 messages in 1 hour. Try again later.&quot; </span>
                             <span class="path">Drupal\DrupalExtension\Context\MinkContext::assertPageContainsText()</span>
                         </div>
+                        <pre class="backtrace">The text "You cannot send more than 5 messages in 1 hour. Try again later." was not found anywhere in the text of the current page.</pre><a href="./assets/screenshots/Contactformpositiveandnegativescenarios/Verifycontactformisshowing5timessubmissionerrormessagewhenformisfilledmorethan5timesinanhour.png">Screenshot</a>
                     </li>
                 </ol>
             </div>
-            <div class="featureResult passed">Feature has passed
+            <div class="featureResult failed">Feature has failed
+                <span>Scenarios passed : 66.67%,
+                Scenarios failed : 33.33%</span>
             </div>
         </div><!DOCTYPE html>
 <html lang="en">
@@ -1014,7 +1019,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Automated test report - 28/05/2021 05:43:33</a>
+            <a class="navbar-brand" href="#">Automated test report - 28/05/2021 08:14:01</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -1033,7 +1038,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
             <div class="chart-summary title">
                 1 Features:
             </div>
-            <div class="chart-summary failed">0 failed</div>
+            <div class="chart-summary failed">1 failed</div>
         </div>
         <div class="col-sm-4">
             <div class="canvas-holder">
@@ -1043,7 +1048,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                 6
                 Scenarios:
             </div>
-            <div class="chart-summary failed">0 failed</div>
+            <div class="chart-summary failed">2 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -1055,7 +1060,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                 72
                 Steps:
             </div>
-            <div class="chart-summary failed">0 failed</div>
+            <div class="chart-summary failed">2 failed</div>
             <div class="chart-summary undefined">0 undefined</div>
             <div class="chart-summary skipped">0 skipped</div>
         </div>
@@ -1074,9 +1079,9 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
 
                     <div class="row">
                                                     <div class="col-sm-4 feature" data-id="feature-1">
-                                <div class="card passed">
+                                <div class="card failed">
                                     <div class="header">
-                                        <h2>Feature: Search Validation</h2>
+                                        <h2>Feature: Contact form positive and negative scenarios</h2>
                                     </div>
                                     <div class="info">
                                         <p></p>
@@ -1088,7 +1093,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                                                                     </div>
                                                                                     <div class="progress">
                                                 <div class="progress-bar progress-bar-green" role="progressbar"
-                                                     style="width: 100%">
+                                                     style="width: 66.666666666667%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                                 <div class="progress-bar progress-bar-warning" role="progressbar"
@@ -1096,7 +1101,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                                 <div class="progress-bar progress-bar-red" role="progressbar"
-                                                     style="width: 0%">
+                                                     style="width: 33.333333333333%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                             </div>
@@ -1111,9 +1116,9 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
     <div id="scenario-overview" class="row">
                                     <div class="feature" data-id="feature-1">
                     <div class="col-sm-4">
-                        <div class="card passed">
+                        <div class="card failed">
                             <div class="header">
-                                <h2>Feature: Search Validation</h2>
+                                <h2>Feature: Contact form positive and negative scenarios</h2>
                             </div>
                             <div class="info">
                                 <p></p>
@@ -1125,7 +1130,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                                                     </div>
                                                                     <div class="progress">
                                         <div class="progress-bar progress-bar-green" role="progressbar"
-                                             style="width: 100%">
+                                             style="width: 66.666666666667%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                         <div class="progress-bar progress-bar-warning" role="progressbar"
@@ -1133,7 +1138,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                         <div class="progress-bar progress-bar-red" role="progressbar"
-                                             style="width: 0%">
+                                             style="width: 33.333333333333%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                     </div>
@@ -1141,14 +1146,14 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                         </div>
                     </div>
                     <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
-                                                    <div class="panel panel-default passed">
+                                                    <div class="panel panel-default failed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
                                            href="#scenario-1-1"
                                            aria-expanded="true"
                                            aria-controls="scenario-1-1">
-                                            Scenario: Validate success message
+                                            Scenario: Validate success message for successful submission of the form.
                                         </a>
 
                                         <div class="tags pull-right">
@@ -1187,9 +1192,11 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>And</b> I press the &quot;Send message&quot; button
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
                                                 <b>Then</b> I should see &quot;Your message has been sent.&quot;
-                                                                                                                                                                                                                                                                                                                                                        </li><li class="list-group-item break">
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(The text &quot;Your message has been sent.&quot; was not found anywhere in the text of the current page.)</p>
+                                                                                                                                                                                                    </li><li class="list-group-item break">
                                                                                             </li>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>Given</b> I am on &quot;/es&quot;
@@ -1228,7 +1235,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                            href="#scenario-1-2"
                                            aria-expanded="true"
                                            aria-controls="scenario-1-2">
-                                            Scenario: Validate Blank and Space value in field
+                                            Scenario: Validate there should not be any success message when form filled with Blank and Space value.
                                         </a>
 
                                         <div class="tags pull-right">
@@ -1308,7 +1315,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                            href="#scenario-1-3"
                                            aria-expanded="true"
                                            aria-controls="scenario-1-3">
-                                            Scenario: Verify contact form is submitted successfully for English
+                                            Scenario: Verify contact form is submitted successfully when &quot;Message&quot; field value is filled with pyString
                                         </a>
 
                                         <div class="tags pull-right">
@@ -1316,6 +1323,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                                                                             <span class="badge">en</span>
                                                                                             <span class="badge">smoke</span>
                                                                                             <span class="badge">sanity</span>
+                                                                                            <span class="badge">pystring</span>
                                                                                                                                 </div>
                                     </h4>
                                 </div>
@@ -1360,7 +1368,7 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                            href="#scenario-1-4"
                                            aria-expanded="true"
                                            aria-controls="scenario-1-4">
-                                            Scenario: Verify contact form is submitted successfully for English
+                                            Scenario: Verify contact form is submitted successfully when &quot;Message&quot; field value is filled with pyString
                                         </a>
 
                                         <div class="tags pull-right">
@@ -1412,13 +1420,12 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                            href="#scenario-1-5"
                                            aria-expanded="true"
                                            aria-controls="scenario-1-5">
-                                            Scenario: Verify contact form is submitted successfully for Spanish with long message
+                                            Scenario: Verify contact form is submitted successfully in spansish when &quot;Message&quot; field value is filled with pyString
                                         </a>
 
                                         <div class="tags pull-right">
                                                                                             <span class="badge">es</span>
-                                                                                                                                    <a class="label label-default" href="./assets/screenshots/SearchValidation/VerifycontactformissubmittedsuccessfullyforSpanishwithlongmessage.png" target="_blank">Screenshot</a>
-                                                                                    </div>
+                                                                                                                                </div>
                                     </h4>
                                 </div>
                                 <div id="scenario-1-5" class="panel-collapse collapse in"
@@ -1455,19 +1462,19 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
-                                                    <div class="panel panel-default passed">
+                                                    <div class="panel panel-default failed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
                                            href="#scenario-1-6"
                                            aria-expanded="true"
                                            aria-controls="scenario-1-6">
-                                            Scenario: Verify contact form is showing 5 times submission error message
+                                            Scenario: Verify contact form is showing 5 times submission error message, when form is filled more than 5 times in an hour
                                         </a>
 
                                         <div class="tags pull-right">
                                                                                             <span class="badge">es</span>
-                                                                                                                                    <a class="label label-default" href="./assets/screenshots/SearchValidation/Verifycontactformisshowing5timessubmissionerrormessage.png" target="_blank">Screenshot</a>
+                                                                                                                                    <a class="label label-default" href="./assets/screenshots/Contactformpositiveandnegativescenarios/Verifycontactformisshowing5timessubmissionerrormessagewhenformisfilledmorethan5timesinanhour.png" target="_blank">Screenshot</a>
                                                                                     </div>
                                     </h4>
                                 </div>
@@ -1499,9 +1506,11 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>And</b> I press the &quot;Send message&quot; button
                                                                                                                                                                                                                                                                                                                                                 </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
                                                 <b>Then</b> I should see &quot;You cannot send more than 5 messages in 1 hour. Try again later.&quot;
-                                                                                                                                                                                                                                                                                                                                                </li>
+                                                                                                                                                                                                                                                        <br>
+                                                    <p style="padding-left:2em ; color:gray">(The text &quot;You cannot send more than 5 messages in 1 hour. Try again later.&quot; was not found anywhere in the text of the current page.)</p>
+                                                                                                                                                                                            </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
@@ -1523,21 +1532,21 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
         new Chart(featureChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Pending', 'Passed'],
                 datasets: [{
-                    data: [0, 0, 6],
+                    data: [2, 0, 4],
                     backgroundColor: ['#F7464A', 'e38d13', '#00a65a'],
                 }],
             }});
         new Chart(scenarioChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed', 'Passed'],
                 datasets: [{
-                    data: [0, 1],
+                    data: [1, 0],
                     backgroundColor: ["#F7464A", "#00a65a"],
                 }],
             }});
         new Chart(stepChart, {type: 'doughnut', options: {legend: {display: false}}, data: {
                 labels: ['Failed','Passed'],
                 datasets: [{
-                    data: [0, 72],
+                    data: [2, 70],
                     backgroundColor: ["#F7464A", "#00a65a"],
                 }],
             }});
@@ -1596,19 +1605,19 @@ like Aldus PageMaker including versions of Lorem Ipsum.</pre>
 </body>
 </html>
 
-        <div class="summary passed">
+        <div class="summary failed">
             <div class="counters">
                 <p class="features">
-                    1 features ( <strong class="passed">1 success</strong> )
+                    1 features ( <strong class="failed">1 fail</strong> )
                 </p>
                 <p class="scenarios">
-                    6 scenarios ( <strong class="passed">6 success</strong> )
+                    6 scenarios ( <strong class="passed">4 success</strong> <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="steps">
-                    72 steps ( <strong class="passed">72 success</strong> )
+                    72 steps ( <strong class="passed">70 success</strong> <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="time">
-                0m20.73s - 25.54Mb
+                0m29.83s - 25.70Mb
                 </p>
             </div>
             <div class="switchers">

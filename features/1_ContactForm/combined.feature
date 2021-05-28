@@ -1,8 +1,8 @@
 @api @javascript
-Feature: Search Validation
+Feature: Contact form positive and negative scenarios
 
   @javascript @en @es @smoke
-  Scenario Outline: Validate success message
+  Scenario Outline: Validate success message for successful submission of the form.
     Given I am on <link>
     When I follow <contact> in the "footer" region
     Then I should see the heading <heading_label>
@@ -12,14 +12,13 @@ Feature: Search Validation
     And I fill in <msg_label> with <msg>
     And I press the <button> button
     Then I should see <notification>
-
     Examples:
       | link  | contact   | heading_label                    | name_label  | name           | email_add                            | email                           | sub_label | sub       | msg_label | msg                | button          |notification                  |
       | "/en" | "Contact" | "Website feedback"               | "Your name" | "Parita Patel" | "Your email address"                 |"parita.patel+001@axelerant.com" | "Subject" | "Inquiry" | "Message" |"Test Message"      | "Send message"  | "Your message has been sent."|
       | "/es"  | "Contacto"| "Comentarios sobre el sitio web" | "Su nombre" | "Parita Patel" | "Su dirección de correo electrónico" |"parita.patel+001@axelerant.com" | "Asunto"  | "Consulta"| "Mensaje" | "Mensaje de prueba"| "Enviar mensaje"| "Su mensaje ha sido enviado."|
 
   @javascript @en @es @neg
-  Scenario Outline: Validate Blank and Space value in field
+  Scenario Outline: Validate there should not be any success message when form filled with Blank and Space value.
     Given I am on <link>
     When I follow <contact> in the "footer" region
     Then I should see the heading <heading_label>
@@ -29,14 +28,70 @@ Feature: Search Validation
     And I fill in <msg_label> with <msg>
     And I press the <button> button
     Then I should not see <notification>
-
     Examples:
       | link  | contact   | heading_label                    | name_label  | name | email_add                            | email | sub_label | sub | msg_label | msg  | button          |notification                  |
       | "/en" | "Contact" | "Website feedback"               | "Your name" | ""   | "Your email address"                 |""     | "Subject" | ""  | "Message" |""    | "Send message"  | "Your message has been sent."|
       | "/es"  | "Contacto"| "Comentarios sobre el sitio web" | "Su nombre" | " "  | "Su dirección de correo electrónico" |" "    | "Asunto"  | " " | "Mensaje" | " "  | "Enviar mensaje"| "Su mensaje ha sido enviado."|
 
+
+  @javascript @en @smoke @sanity @pystring
+  Scenario: Verify contact form is submitted successfully when "Message" field value is filled with pyString
+    Given I am on "/"
+    When I follow "Contact"
+    Then I should see the heading "Website feedback"
+    When I fill in "Your name" with "Parita Patel"
+    And I fill in "Your email address" with "parita.patel+001@axelerant.com"
+    And I fill in "Subject" with "Inquiry"
+    And I fill in "Message" with:
+      """
+      Lorem Ipsum is simply dummy text of the
+      printing and typesetting industry.
+      Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s,
+      when an unknown printer took a galley of
+      type and scrambled it to make a type specimen book.
+      It has survived not only five centuries,
+      It has survived not only five centuries,
+      but also the leap into electronic typesetting,
+      remaining essentially unchanged.
+      It was popularised in the 1960s with the
+      release of Letraset sheets containing Lorem Ipsum passages,
+      and more recently with desktop publishing software
+      like Aldus PageMaker including versions of Lorem Ipsum.
+      """
+    And I press the "Send message" button
+    Then I should see "Your message has been sent."
+
+  @javascript @en @smoke @sanity
+  Scenario: Verify contact form is submitted successfully when "Message" field value is filled with pyString
+    Given I am on "/"
+    When I follow "Contact"
+    Then I should see the heading "Website feedback"
+    When I fill in "Your name" with "Parita Patel"
+    And I fill in "Your email address" with "parita.patel+001@axelerant.com"
+    And I fill in "Subject" with "Inquiry"
+    And I fill in "Message" with:
+      """
+      Lorem Ipsum is simply dummy text of the
+      printing and typesetting industry.
+      Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s,
+      when an unknown printer took a galley of
+      type and scrambled it to make a type specimen book.
+      It has survived not only five centuries,
+      It has survived not only five centuries,
+      but also the leap into electronic typesetting,
+      remaining essentially unchanged.
+      It was popularised in the 1960s with the
+      release of Letraset sheets containing Lorem Ipsum passages,
+      and more recently with desktop publishing software
+      like Aldus PageMaker including versions of Lorem Ipsum.
+      """
+    And I press the "Send message" button
+    Then I should see "Your message has been sent."
+
   @es
-  Scenario: Verify contact form is submitted successfully for Spanish with long message
+  Scenario: Verify contact form is submitted successfully in spansish when "Message" field value is filled with pyString
     Given I am on "/es"
     When I follow "Contacto"
     Then I should see the heading "Comentarios sobre el sitio web"
@@ -64,7 +119,7 @@ Feature: Search Validation
     Then I should see "Su mensaje ha sido enviado."
 
   @es
-  Scenario: Verify contact form is showing 5 times submission error message
+  Scenario: Verify contact form is showing 5 times submission error message, when form is filled more than 5 times in an hour
     Given I am on "/"
     When I follow "Contact"
     Then I should see the heading "Website feedback"
