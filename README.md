@@ -2,13 +2,6 @@
 
 # Behat Drupal Extension
 
-[![Build Status](https://travis-ci.org/nuvoleweb/drupal-behat.svg?branch=1.0.x)](https://travis-ci.org/nuvoleweb/drupal-behat)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nuvoleweb/drupal-behat/badges/quality-score.png?b=1.0.x)](https://scrutinizer-ci.com/g/nuvoleweb/drupal-behat/?branch=1.0.x)
-[![Latest Stable Version](https://poser.pugx.org/nuvoleweb/drupal-behat/v/stable)](https://packagist.org/packages/nuvoleweb/drupal-behat)
-[![Latest Unstable Version](https://poser.pugx.org/nuvoleweb/drupal-behat/v/unstable)](https://packagist.org/packages/nuvoleweb/drupal-behat)
-[![Total Downloads](https://poser.pugx.org/nuvoleweb/drupal-behat/downloads)](https://packagist.org/packages/nuvoleweb/drupal-behat)
-[![License](https://poser.pugx.org/nuvoleweb/drupal-behat/license)](https://packagist.org/packages/nuvoleweb/drupal-behat)
-
 Behat Drupal Extension extends the popular [Behat Drupal Extension](https://www.drupal.org/project/drupalextension)
 in order to provide the following features:
 
@@ -20,6 +13,14 @@ in order to provide the following features:
   Drupal core versions.
 
 For more information please check the [documentation](https://github.com/nuvoleweb/drupal-behat/wiki/Documentation).
+
+# Mink
+
+Mink is a browser emulators abstraction layer.
+
+It defines a basic API through which you can talk with specific browser emulator libraries.
+
+Mink drivers define a bridge between Mink and those libraries.
 
 ### Test Execution Steps:
 
