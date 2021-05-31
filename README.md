@@ -12,7 +12,7 @@ in order to provide the following features:
 - Developers can override Drupal driver core classes and allow their step definitions to run transparently on different
   Drupal core versions.
 
-For more information please check the [documentation](https://github.com/nuvoleweb/drupal-behat/wiki/Documentation).
+For more information please check the [documentation](https://behat-drupal-extension.readthedocs.io/en/v4.0.1/).
 
 # Mink
 
@@ -27,10 +27,13 @@ Mink drivers define a bridge between Mink and those libraries.
 1. Clone this repo/project which has all the drupal and behat dependencies
 
 2. Move all the child directories of this project(from "core" directory till web.config file) under your MAMP server location (/Applications/MAMP/htdocs)
+   (<b>Prerequisite :</b> MAMP/WAMP/LAMP should be installed in your device)
+  -- To install mamp in your device please refer [site](https://www.mamp.info/en/downloads/).
 
-3. Run `composer install`
+3. Run `composer install` (Prerequisite-composer should be install in your device)
+  -- To install composer in your device please refer [documentation](https://getcomposer.org/doc/00-intro.md).
 
-4. Setup the site on your local machine
+4. Setup the site on your local machine 
 
 5. update local site url in the behat.yml file for all the profiles, placed in your project root directory.
    site url is added for the: "Drupal\MinkExtension"
@@ -56,5 +59,6 @@ or to execute test in headless mode
 vendor/bin/behat --profile="headless"
 ```
 
-Note:8_deleteTestMedia.feature is added only to delete dummy media from the application.
+<i><b>Note:</b></i>
+8_deleteTestMedia.feature is added only to delete dummy media from the application generated due to file upload behat scenario. 
      
