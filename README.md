@@ -12,7 +12,7 @@
 
 5. update local site url in the behat.yml file for all the profiles, placed in your project root directory.
    site url is added for the: "Drupal\MinkExtension"
-```
+``` bash
 default:
   suites:
     ...
