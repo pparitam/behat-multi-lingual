@@ -54,7 +54,7 @@ Feature: Search Validation
 
   @en @header @smoke
   Scenario: Verify my account and logout buttons
-    Given I login as "Administrator" user
+    Given I am logged in as a user with the "administrator" role
     #Homepage
     And I am on "/"
     Then I should see "My account" in the "preheader" region
@@ -103,7 +103,7 @@ Feature: Search Validation
 
   @es @header @smoke
   Scenario: Verify my account and logout buttons
-    Given I login as "Administrator" user
+    Given I am logged in as a user with the "administrator" role
     And I am on "/es"
     Then I should see "Mi cuenta" in the "preheader" region
     And I hover over the "Mi cuenta" link

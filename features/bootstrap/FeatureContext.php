@@ -430,7 +430,47 @@ JS;
     }
   }
 
+  /**
+   * @Given /^the test email system is enabled$/
+   */
+  public function theTestEmailSystemIsEnabled() {
+    // Store the original system to restore after the scenario.
+    $this->originalMailSystem = variable_get('mail_system', array('default-system' => 'DefaultMailSystem'));
+    // Set the test system.
+    variable_set('mail_system', array('default-system' => 'TestingMailSystem'));
+    // Flush the email buffer, allowing us to reuse this step definition to clear existing mail.
+    variable_set('drupal_test_email_collector', array());
+  }
 
+  /**
+   * @Then I should see the breadcrumb link :arg1
+   */
+  public function iShouldSeeTheBreadcrumbLink($arg1)
+  {
+    // get the breadcrumb
+    /**
+     * @var Behat\Mink\Element\NodeElement $breadcrumb
+     */
+    $breadcrumb = $this->getSession()->getPage()->find('css', 'div#breadcrumb');
+
+    // this does not work for URLs
+    $link = $breadcrumb->findLink($arg1);
+    if ($link) {
+      return;
+    }
+
+    // filter by url
+    $link = $breadcrumb->findAll('css', "a[href=\"{$arg1}\"]");
+    if ($link) {
+      return;
+    }
+
+    throw new \Exception(
+      sprintf("Expected link %s not found in breadcrumb on page %s",
+        $arg1,
+        $this->getSession()->getCurrentUrl())
+    );
+  }
   /**
    * @AfterStep
 

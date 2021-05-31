@@ -3,7 +3,7 @@ Feature: Search Validation
 
   @api @content @javascript @creation @es
   Scenario: 1.Create tags and Validate article is not getting created if mandatory fields are marked empty
-  Given I login as "Administrator" user
+  Given I am logged in as "admin"
   When I am viewing a "tags" term with the name "behat_receta_etiqueta"
   Then I should see the heading "behat_receta_etiqueta"
       #create Recipe category

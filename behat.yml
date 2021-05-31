@@ -1,8 +1,8 @@
 default:
   suites:
     default:
-#      paths:
-#        - %paths.base%/features
+      paths:
+        - %paths.base%/features
       contexts:
         - FeatureContext
         - Drupal\DrupalExtension\Context\DrupalContext
@@ -59,10 +59,12 @@ default:
         right: '.layout-region layout-region-node-secondary'
         main: ".region-content"
         page-title: ".block-page-title-block"
+        heading-title: ".region-page-title"
         promoted: ".view-promoted-items--double"
         content: ".layout-content"
         summary: ".summary"
         Ingredients: ".block-field-blocknoderecipefield-ingredients"
+        breadcrumb: '.region-breadcrumbs'
       selectors:
         message_selector: '.messages'
         error_message_selector: '.messages--error'

@@ -32,7 +32,7 @@ Feature: Search Validation
     And I press the "Save" button
     And I wait 5 second
     And I should see the following error messages:
-      | error messages            |
+      | error messages                        |
       | Summary field is required.            |
       | Recipe instruction field is required. |
       | This value should not be null.        |
