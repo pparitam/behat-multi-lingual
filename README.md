@@ -6,33 +6,26 @@
 
 2. Move all the child directories of this project(from "core" directory till web.config file) under your MAMP server location (/Applications/MAMP/htdocs)
 
-3. behat.yml file
+3. Run `composer install`
 
+4. Setup the site on your local machine
+
+5. update local site url in the behat.yml file for all the profiles, placed in your project root directory.
+   site url is added for the: "Drupal\MinkExtension"
 ```
 default:
   suites:
-    default:
-      paths:
-        features: '/Applications/MAMP/htdocs/features'
-      contexts:
-        - FeatureContext
-        - Drupal\DrupalExtension\Context\DrupalContext
-        - Drupal\DrupalExtension\Context\MinkContext
+    ...
+  formatters:
+    ...
   extensions:
     Drupal\MinkExtension:
-      goutte: ~
-      selenium2: ~
+      ...
       base_url: http://localhost:8888
-    Drupal\DrupalExtension:
-      blackbox: ~
-      api_driver: 'drupal' 
-      drush:
-        alias: 'local'
-      drupal: 
-        drupal_root: '/Applications/MAMP/htdocs/' 
+      ...
 ```
 
-4. Execute your behat tests from /Applications/MAMP/htdocs
+6. Execute your behat tests from /Applications/MAMP/htdocs
    ```
    vendor/bin/behat
    ```
