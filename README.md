@@ -25,7 +25,14 @@ default:
       ...
 ```
 
-6. Execute your behat tests from /Applications/MAMP/htdocs
-   ```
-   vendor/bin/behat
-   ```
+6. Execute your all behat tests from /Applications/MAMP/htdocs in browser mode
+```
+vendor/bin/behat
+```
+or to execute test in headless mode 
+```
+vendor/bin/behat --profile="headless"
+```
+
+Note:8_deleteTestMedia.feature is added only to delete dummy media from the application.
+     
